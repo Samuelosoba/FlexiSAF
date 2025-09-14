@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        color: #333;
+      }
+      .student {
+        padding: 10px;
+        border: 1px solid #ddd;
+        margin: 5px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      button {
+        margin-left: 5px;
+        background: #007bff;
+        border: none;
+        color: white;
+        padding: 4px 8px;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+      button:hover {
+        background: #0056b3;
+      }
+      input {
+        padding: 6px;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Student Dashboard (ES6 Practice)</h2>
+
+    <!-- Input Fields -->
+    <input type="text" id="nameInput" placeholder="Enter student name" />
+    <input type="number" id="scoreInput" placeholder="Enter score" />
+    <button onclick="addStudent()">Add Student</button>
+
+    <!-- Students List -->
+    <h3>All Students</h3>
+    <div id="students"></div>
+
+    <!-- Statistics Section -->
+    <h3>Statistics</h3>
+    <div id="stats"></div>
+
+    <script>
+      // Array to store student objects
+      let students = [
+        { name: "Jane", score: 85 },
+        { name: "John", score: 60 },
+        { name: "Mary", score: 95 },
+      ];
+
+      // Add new student
+      const addStudent = () => {
+        const name = document.getElementById("nameInput").value.trim();
+        const score = Number(document.getElementById("scoreInput").value);
+
+        if (!name || isNaN(score)) {
+          return alert("Enter valid name & score");
+        }
+
+        students.push({ name, score });
+        render();
+        document.getElementById("nameInput").value = "";
+        document.getElementById("scoreInput").value = "";
+      };
+
+      // Remove student by index
+      const removeStudent = (index) => {
+        students.splice(index, 1);
+        render();
+      };
+
+      // Render students and stats
+      const render = () => {
+        const container = document.getElementById("students");
+        container.innerHTML = "";
+
+        // Display each student
+        students.forEach((student, index) => {
+          container.innerHTML += `
+          <div class="student">
+            <span>${student.name} — Score: ${student.score}</span>
+            <button onclick="removeStudent(${index})">Remove</button>
+          </div>
+        `;
+        });
+
+        // ES6 methods for statistics
+        const scores = students.map((s) => s.score);
+        const passed = students.filter((s) => s.score >= 70);
+        const total = scores.reduce((a, b) => a + b, 0);
+        const average = (scores.length ? total / scores.length : 0).toFixed(2);
+
+        document.getElementById("stats").innerHTML = `
+        <p>Total Students: ${students.length}</p>
+        <p>Passed (≥70): ${passed.length}</p>
+        <p>Average Score: ${average}</p>
+      `;
+      };
+
+      // Initial render
+      render();
+    </script>
+  </body>
+</html>
