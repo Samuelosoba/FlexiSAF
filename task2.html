@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cars Documentary</title>
+    <link rel="stylesheet" href="tast2.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="logo">Cars<span>Docu</span></div>
+      <nav class="nav">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#history">History</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#contact">Join Us</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger">&#9776;</button>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero" class="hero">
+      <h1>The Evolution of <span>Cars</span></h1>
+      <p class="tagline">From Classic Models to the Future of Mobility</p>
+      <a href="#history" class="cta-btn">Explore Now</a>
+    </section>
+
+    <!-- HISTORY SECTION -->
+    <section id="history" class="features">
+      <h2>Car History Highlights</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Early Inventions</h3>
+          <p>
+            Discover how Karl Benz built the first automobile in 1886 and
+            changed history forever.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Muscle Car Era</h3>
+          <p>
+            Explore the powerful V8 beasts of the 60s and 70s that defined
+            American car culture.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>Electric Revolution</h3>
+          <p>
+            Learn how EVs are shaping the future with Tesla, Rivian, and legacy
+            automakers joining in.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- IMAGE GALLERY -->
+    <section id="gallery" class="gallery">
+      <h2>Iconic Cars Gallery</h2>
+      <div class="gallery-grid">
+        <div
+          class="gallery-item"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Y2Fyc3xlbnwwfHwwfHx8MA%3D%3D');
+          "
+        ></div>
+        <div
+          class="gallery-item"
+          style="
+            background-image: url('https://plus.unsplash.com/premium_photo-1664303847960-586318f59035?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2Fyc3xlbnwwfHwwfHx8MA%3D%3D');
+          "
+        ></div>
+        <div
+          class="gallery-item"
+          style="
+            background-image: url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2Fyc3xlbnwwfHwwfHx8MA%3D%3D');
+          "
+        ></div>
+      </div>
+    </section>
+
+    <!-- FLEXBOX SHOWCASE -->
+    <section class="flex-section">
+      <h2>Car Categories</h2>
+      <div class="flex-container">
+        <div class="flex-item">Sports Cars</div>
+        <div class="flex-item">SUVs</div>
+        <div class="flex-item">Electric Vehicles</div>
+        <div class="flex-item">Classics</div>
+      </div>
+      <p>Resize the screen to see how these categories rearrange flexibly.</p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <h2>Join Our Car Enthusiast Community</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Why do you love cars?"></textarea>
+        <button type="submit">Sign Up</button>
+      </form>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; 2025 Cars Documentary | All Rights Reserved</p>
+    </footer>
+
+    <script>
+      // Hamburger Menu Toggle
+      document.querySelector(".hamburger").addEventListener("click", () => {
+        document.querySelector(".nav ul").classList.toggle("show");
+      });
+    </script>
+  </body>
+</html>
