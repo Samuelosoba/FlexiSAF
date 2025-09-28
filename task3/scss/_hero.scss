@@ -1,0 +1,29 @@
+.hero {
+  background: linear-gradient(120deg, $primary-color, $secondary-color);
+  color: white;
+  padding: 5rem 0;
+  text-align: center;
+
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-size: 1.2rem;
+  }
+
+  .btn-primary {
+    background: white;
+    color: $primary-color;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    &:hover {
+      background: lighten(white, 10%);
+    }
+  }
+}

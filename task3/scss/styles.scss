@@ -1,0 +1,12 @@
+@import 'variables';
+@import 'mixins';
+@import 'header';
+@import 'hero';
+@import 'features';
+@import 'footer';
+
+body {
+  margin: 0;
+  font-family: $font-stack;
+  color: $text-color;
+}
